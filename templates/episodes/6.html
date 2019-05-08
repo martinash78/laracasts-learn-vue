@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ parent() }}
+{% endblock %}
+{% block content %}
+<h2>Episode 6</h2>
+<div class="col-12" id="episode-6">
+
+    <h2>All Tasks</h2>
+
+    <ul>
+        <li v-for="task in tasks" v-text="task.description"></li>
+    </ul>
+
+
+    <h2>Complete Tasks</h2>
+
+    <ul>
+        <li v-for="task in completeTasks" v-text="task.description"></li>
+    </ul>
+
+    <h2>Incomplete Tasks</h2>
+
+    <ul>
+        <li v-for="task in incompleteTasks" v-text="task.description"></li>
+    </ul>
+
+
+</div>
+<script src="../js/ep6.js"></script>
+{% endblock %}

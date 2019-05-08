@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ parent() }}
+{% endblock %}
+{% block content %}
+<h2>Episodes 1-5</h2>
+
+<div class="col-12" id="app-8">
+    <ul>
+        <li v-for="name in names" v-text="name"></li>
+    </ul>
+    <input id="newName" type="text" v-model="newName">
+    <button v-on:click="addName">Add Name</button>
+</div>
+
+<div class="col-12" id="app-9">
+    <button :class="{ 'is-loading' : isLoading}" @click="toggleClass">Toggle Me</button>
+    <button :disabled="disabled" @click="disableMe">Disable Me</button>
+</div>
+<script src="../js/ep1-5.js"></script>
+{% endblock %}
