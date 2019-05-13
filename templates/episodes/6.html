@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Episode 6{% endblock %}
 {% block head %}
 {{ parent() }}
 {% endblock %}
@@ -10,23 +10,33 @@
     <h2>All Tasks</h2>
 
     <ul>
-        <li v-for="task in tasks" v-text="task.description"></li>
+        <li v-for="task in tasks"><% task.description %></li>
     </ul>
 
 
     <h2>Complete Tasks</h2>
 
     <ul>
-        <li v-for="task in completeTasks" v-text="task.description"></li>
+        <li v-for="task in completeTasks">
+            <label>
+                <% task.description %> <input type="checkbox" v-model="task.isComplete">
+            </label>
+        </li>
     </ul>
 
     <h2>Incomplete Tasks</h2>
 
     <ul>
-        <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        <li v-for="task in incompleteTasks">
+            <label class="checkbox">
+                <% task.description %> <input type="checkbox" v-model="task.isComplete">
+            </label>
+        </li>
     </ul>
 
 
+
 </div>
+
 <script src="../js/ep6.js"></script>
 {% endblock %}

@@ -1,20 +1,35 @@
 new Vue({
   el: '#episode-6',
+  delimiters: ["<%","%>"],
+
   data: {
-    tasks: [
-      { description: 'Make breakfast', completed: true},
-      { description: 'Make lunch', completed: false},
-      { description: 'Make dinner', completed: false},
-      { description: 'Make supper', completed: false},
-      { description: 'Go to bed', completed: false},
-    ]
+    tasks: [{
+      description: 'Go to the store',
+      isComplete: true
+    }, {
+      description: 'Finish tutorial',
+      isComplete: true
+    }, {
+      description: 'Go to airport',
+      isComplete: false
+    }, {
+      description: 'Clear Inbox',
+      isComplete: false
+    }, {
+      description: 'Make dinner',
+      isComplete: false
+    }, {
+      description: 'Clean room',
+      isComplete: false
+    }]
   },
+
   computed: {
     incompleteTasks() {
-      return this.tasks.filter(task => ! task.completed);
+      return this.tasks.filter(task => !task.isComplete)
     },
     completeTasks() {
-      return this.tasks.filter(task => task.completed);
+      return this.tasks.filter(task => task.isComplete)
     }
   }
 })
