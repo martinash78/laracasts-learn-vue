@@ -1,0 +1,9 @@
+<div class="col-12" id="app-10">
+    <select id="sign_off" @change="showOrHide(this.value)" v-model="selectedValue">
+        <option
+            v-for="option in sign_off_options"
+            :selected="option.id == 1"
+            :value="option.id" ><% option.description %.</option>
+    </select>
+    <p v-if="seen">Message Can Be Seen!</p>
+</div>
