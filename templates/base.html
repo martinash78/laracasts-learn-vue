@@ -25,11 +25,11 @@
                         Episodes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/episodes/1-5.php">1-5</a>
-                        <a class="dropdown-item" href="/episodes/6.php">6</a>
-                        <a class="dropdown-item" href="/episodes/7.php">7</a>
-                        <a class="dropdown-item" href="/episodes/8.php">8</a>
+                        {% for key, value in ['1-5',6,7,8] %}
+                        <a class="dropdown-item" href="/episodes/index.php?episode={{ value }}">{{ value }}</a>
+                        {% endfor %}
                     </div>
+
                 </li>
             </ul>
         </div>
